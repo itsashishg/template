@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.net.UnknownHostException;
 import java.util.Map;
 
-@Controller
+@org.springframework.web.bind.annotation.RestController
 public class RestController {
 
     // The `GetMapping` annotation indicates that this method should be called
     // when handling GET requests to the "/simple-request" endpoint
     @GetMapping("/simple-request")
-    public String simpleRequest() {
-        // In this case, we return the plain text response "ok"
+    public String simpleRequest(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("HERE");
         return "ok";
     }
 
